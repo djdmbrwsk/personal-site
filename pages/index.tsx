@@ -22,10 +22,11 @@ const Home: NextPage = () => {
 
     fill: ${currentPane === 0 ? '#008fff' : '#C7254E'};
     :hover {
-      ${!animateIcon && 'transform: scale(1.025, 1.025);'}
+      transform: ${!animateIcon && 'scale(1.025, 1.025) rotate(0deg)'};
     }
-    ${animateIcon &&
-    `transform: scale(1.15, 1.15) rotate(${currentPane ? '' : '-'}360deg);`};
+    transform: ${!animateIcon
+      ? 'scale(1) rotate(0deg)'
+      : `scale(1.15, 1.15) rotate(${currentPane ? '' : '-'}360deg)`};
   `;
 
   const bullet = css`
